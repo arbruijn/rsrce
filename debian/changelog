@@ -1,0 +1,56 @@
+rsrce (0.2.2) unstable; urgency=low
+
+  * Improve the manual page. 
+  * Add some command line options to allow for '#!/usr/bin/rsrce -ef' scripts.
+  * A bug prevented file to be read on big-endian architectures; fix provided
+    by Piotr Krysiuk. (closes: #379878)
+
+ -- Jeremie Koenig <sprite@sprite.fr.eu.org>  Wed, 26 Jul 2006 03:54:33 +0200
+
+rsrce (0.2.1) unstable; urgency=low
+
+  * Aurélien GÉRÔME <ag@roxor.cx>
+
+    - Convert debian/control from ISO_8859-15 to UTF-8.
+    - Fix lintian warnings and errors.
+    - Conform compiler optimisations to policy.
+
+  * Jérémie Koenig <sprite@sprite.fr.eu.org>
+
+    - Fix the type list offset in the map header which points to the
+      number of types field before the actual list.
+    - Fix the written resource map length which included space for
+      non-existant names.
+
+ -- Aurélien GÉRÔME <ag@roxor.cx>  Sat, 15 Jul 2006 15:33:40 +0200
+
+rsrce (0.2) unstable; urgency=low
+
+  * Aurélien GÉRÔME <ag@roxor.cx>
+
+    - Fix exporting of binary resources, courtesy of Piotr Krysiuk
+      (closes: #340533).
+    - New feature by Piotr Krysiuk: rsrce now allows for new resources to be
+      created (closes: #365655).
+    - Update to the latest Standards-Version.
+
+  * Jérémie Koenig <sprite@sprite.fr.eu.org>
+
+    - No more crazy memory management in resource.c.
+    - Fix /tmp clutter, behaviour with empty strings and some crashes on
+      malformed input.
+    - Command parser with backslashes, single quotes and comments.
+
+ -- Jeremie Koenig <sprite@sprite.fr.eu.org>  Wed, 12 Jul 2006 09:46:57 +0200
+
+rsrce (0.1-2) unstable; urgency=low
+
+  * Added man page provided by Jeremie Koenig.
+
+ -- Sven Luther <luther@debian.org>  Fri, 26 Mar 2004 20:55:41 +0100
+
+rsrce (0.1-1) unstable; urgency=low
+
+  * Initial release (closes: #237308)
+
+ -- Jeremie Koenig <sprite@sprite.fr.eu.org>  Thu,  4 Mar 2004 11:59:33 +0100

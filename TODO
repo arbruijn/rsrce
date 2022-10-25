@@ -1,0 +1,4 @@
+- rsrce.1: document the syntax of attr-spec, tell about the default filename
+  for read and write (but the code should be clarified first)
+- add commands for changing the resource fork's reserved space and attributes
+- fix 'rename' to allow both removing the name and setting an empty one

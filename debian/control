@@ -1,0 +1,21 @@
+Source: rsrce
+Maintainer: Debootloaders miBoot Maintainers Team <debootloaders-miboot@lists.alioth.debian.org>
+Uploaders: Sven Luther <luther@debian.org>, Aurélien GÉRÔME <ag@roxor.cx>, Jeremie Koenig <sprite@sprite.fr.eu.org>, Piotr Krysiuk <piotras@gmail.com>
+Section: otherosfs
+Priority: optional
+Build-Depends: debhelper (>= 4)
+Standards-Version: 3.7.2
+
+Package: rsrce
+Architecture: any
+Depends: ${shlibs:Depends}
+Suggests: hfsutils, macutils
+Description: editor for Macintosh resource forks
+ Rsrce is an interactive, command-driven Macintosh resource editor. It
+ aims at providing the functionality of the MacOS tool "resedit" on
+ Unix-like systems.
+ .
+ This program hasn't been tested much and should be considered unstable
+ material. It has exclusively been created and used to change the
+ configuration of miBoot files. Please use with care and report any
+ experience.

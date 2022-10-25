@@ -1,0 +1,66 @@
+How to use rsrce
+
+
+1. Introduction
+
+This is rsrce, a Macintosh resource fork editor for Unix-like operating
+systems. It has been originally created to change the configuration of the
+miBoot Linux bootloader for OldWorld PowerMac computers.
+
+Since I do not use MacOS, I haven't tested any other usage of this program.
+You should therefore be very careful when using it, as it could very well
+produce unusable output. Consider this as unstable software.
+
+Another consequence of this is wildly missing functionnality. I'm not going to
+work on it, since I couldn't test anything in a real situation. Patches and/or
+bug reports would be very welcome.
+
+
+2. Overview
+
+Rsrce acts on raw resource forks stored in Unix files, such as .rsrc files
+produced by the hexbin command (from the macutil package.) You read such a
+thing into memory using the "read" command, then act on the resources it
+contains, then write it back.
+
+Resources are referred to by specifing their type and id, separated by a
+colon. I mean, something like "STR#:128". If the type field contains less than
+4 letters, spaces are added to complete it.
+
+Rsrce doesn't allow you to edit the resource data directly. It only knows to
+import/export them from/to files, performing conversion for the few resource
+types it knows. The "edit" command exports some resource's data to a temporary
+file, invokes and external editor, then import the file back.
+
+
+3. Commands
+
+read <file>
+    reads the resources from <file>
+write <file>
+    write the resources to <file>
+ls
+    lists resources (type, id, attributes, data lenght, name)
+hexdump <resource>
+    shows and hexdump of <resource>'s data
+import|export <resource> <file>
+    import/export <resource>'s data from/to <file>
+edit <resource>
+    invoke an external editor to change <resource>'s data
+help
+    lists available commands
+exit
+    exits (without saving, use write before exit if you wish to save your
+    changes).
+
+
+4. Conclusion
+
+If you actually use this program, please let me know how it's going. If you
+hack it, please send me your patches. Be careful not to hack it too much,
+however, you'd take the risk of becoming its maintainer.
+
+
+
+                       Jeremie Koenig <sprite@sprite.fr.eu.org>  2004-03-04
+
