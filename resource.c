@@ -52,7 +52,7 @@ struct res_fork {
 static int res_lookup_type(struct res_fork *f, restype_t type)
 {
 	int i;
-	for(i=0; (i < f->tn) && memcmp(f->tt[i].type, type, sizeof type); i++);
+	for(i=0; (i < f->tn) && memcmp(f->tt[i].type, type, sizeof(restype_t)); i++);
 	return (i < f->tn) ? i : -1;
 }
 
@@ -78,7 +78,7 @@ static int res_getti(struct res_fork *f, restype_t type)
 	if(ti < 0) {
 		ti = f->tn++;
 		f->tt = realloc(f->tt, f->tn * sizeof *f->tt);
-		memcpy(f->tt[ti].type, type, sizeof type);
+		memcpy(f->tt[ti].type, type, sizeof(restype_t));
 		f->tt[ti].rlist = NULL;
 	}
 
@@ -128,7 +128,7 @@ void res_setdata(struct resource *r, void *p, int len)
 
 void res_gettype(struct resource *r, restype_t type)
 {
-	memcpy(type, r->f->tt[r->ti].type, sizeof type);
+	memcpy(type, r->f->tt[r->ti].type, sizeof(restype_t));
 }
 
 void res_rename(struct resource *r, char *name, int nlen)
